@@ -159,8 +159,8 @@ class PlaceholderService extends Component
     {
         $hash = $config['hash'] ?? null;
         $format = $config['format'] ?? 'png';
-        $width = $config['width'] ?? 4;
-        $height = $config['height'] ?? 3;
+        $width = intval($config['width'] ?? 4);
+        $height = intval($config['height'] ?? 3);
 
         if ($hash === null) {
             throw new ImagerException('Placeholder of type "blurhash" needs a hash string.');
